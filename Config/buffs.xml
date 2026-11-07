@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configs>
+  <!-- These vanilla buffs REPLACE capacity. Additive bonuses need no changes. -->
+  <set xpath="/buffs/buff[@name='god' or @name='buffDrugSteroids' or @name='twitch_buffPackMule' or @name='twitch_buffEncumbered']/effect_group/passive_effect[@name='CarryCapacity'][@operation='base_set']/@value">960</set>
+</configs>

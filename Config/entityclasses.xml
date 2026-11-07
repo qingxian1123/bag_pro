@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configs>
+  <!-- V3.4 clamps the evaluated BagSize to MaxBagSize. Both must be raised. -->
+  <set xpath="/entity_classes/entity_class[@name='playerMale']/property[@name='MaxBagSize']/@value">960</set>
+  <set xpath="/entity_classes/entity_class[@name='playerMale']/effect_group/passive_effect[@name='BagSize'][@operation='base_set']/@value">960</set>
+  <!-- Literal capacity: independent of level, equipment and carry sandbox settings. -->
+  <set xpath="/entity_classes/entity_class[@name='playerMale']/effect_group/passive_effect[@name='CarryCapacity'][@operation='base_set']/@value">960</set>
+</configs>

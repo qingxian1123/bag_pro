@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configs>
+  <!-- V3.4.0 b10: preserve BackpackWindow, header and the complete native actions row. -->
+  <set xpath="/windows/window[@name='windowBackpack']/@width">870</set>
+  <set xpath="/windows/window[@name='windowBackpack']/@height">419</set>
+  <set xpath="/windows/window[@name='windowBackpack']/rect[@name='header']/label[@text='{currencyamount}']/@pos">759,-8</set>
+  <set xpath="/windows/window[@name='windowBackpack']/rect[@name='header']/sprite[@name='costIcon']/@pos">844,-10</set>
+  <set xpath="/windows/window[@name='windowBackpack']/rect[@name='header']/button[@name='btnClearInventory']/@pos">647,-22</set>
+
+  <!-- Keep the native content controller and ID (bp.content is a gamepad navigation target). -->
+  <!-- V3.4 widgets inherit depth. Keep slot hit targets above this clickable background. -->
+  <setattribute xpath="/windows/window[@name='windowBackpack']/rect[@name='content']" name="width">870</setattribute>
+  <set xpath="/windows/window[@name='windowBackpack']/rect[@name='content']/@height">330</set>
+  <set xpath="/windows/window[@name='windowBackpack']/rect[@name='content']/@pos">0,-89</set>
+  <remove xpath="/windows/window[@name='windowBackpack']/rect[@name='content']/defaultscrollbar"/>
+  <remove xpath="/windows/window[@name='windowBackpack']/rect[@name='content']/scrollview"/>
+  <append xpath="/windows/window[@name='windowBackpack']/rect[@name='content']">
+    <rect name="flBackpackPages" controller="TabSelector" pos="3,-3" width="864" height="324" depth="1" select_tab_contents_on_open="true" select_tab_contents_on_change="true">
+      <rect name="tabsHeader" height="36">
+        <grid name="flPageButtons" depth="10" rows="1" cols="9" cell_width="96" cell_height="36" repeat_content="true">
+          <rect controller="TabSelectorButton" width="96" height="34">
+            <simplebutton name="tabButton" caption="{tab_name_localized}" width="94" height="34" font_size="24"/>
+          </rect>
+        </grid>
+      </rect>
+      <rect name="tabsContents" pos="0,-36" width="864" height="288">
+        <!-- Page 1: slots 1-108. One shared Backpack controller assigns global indices. -->
+        <rect name="flPage1" controller="TabSelectorTab" tab_key="1" tab_caption_key="1" width="864" height="288">
+          <grid name="flInventory1" depth="10" rows="6" cols="18" pos="0,0" cell_width="48" cell_height="48" repeat_content="true">
+            <item_stack name="0" cell_size="48"/>
+          </grid>
+        </rect>
+        <!-- Page 2: slots 109-216. One shared Backpack controller assigns global indices. -->
+        <rect name="flPage2" controller="TabSelectorTab" tab_key="2" tab_caption_key="2" width="864" height="288">
+          <grid name="flInventory2" depth="10" rows="6" cols="18" pos="0,0" cell_width="48" cell_height="48" repeat_content="true">
+            <item_stack name="0" cell_size="48"/>
+          </grid>
+        </rect>
+        <!-- Page 3: slots 217-324. One shared Backpack controller assigns global indices. -->
+        <rect name="flPage3" controller="TabSelectorTab" tab_key="3" tab_caption_key="3" width="864" height="288">
+          <grid name="flInventory3" depth="10" rows="6" cols="18" pos="0,0" cell_width="48" cell_height="48" repeat_content="true">
+            <item_stack name="0" cell_size="48"/>
+          </grid>
+        </rect>
+        <!-- Page 4: slots 325-432. One shared Backpack controller assigns global indices. -->
+        <rect name="flPage4" controller="TabSelectorTab" tab_key="4" tab_caption_key="4" width="864" height="288">
+          <grid name="flInventory4" depth="10" rows="6" cols="18" pos="0,0" cell_width="48" cell_height="48" repeat_content="true">
+            <item_stack name="0" cell_size="48"/>
+          </grid>
+        </rect>
+        <!-- Page 5: slots 433-540. One shared Backpack controller assigns global indices. -->
+        <rect name="flPage5" controller="TabSelectorTab" tab_key="5" tab_caption_key="5" width="864" height="288">
+          <grid name="flInventory5" depth="10" rows="6" cols="18" pos="0,0" cell_width="48" cell_height="48" repeat_content="true">
+            <item_stack name="0" cell_size="48"/>
+          </grid>
+        </rect>
+        <!-- Page 6: slots 541-648. One shared Backpack controller assigns global indices. -->
+        <rect name="flPage6" controller="TabSelectorTab" tab_key="6" tab_caption_key="6" width="864" height="288">
+          <grid name="flInventory6" depth="10" rows="6" cols="18" pos="0,0" cell_width="48" cell_height="48" repeat_content="true">
+            <item_stack name="0" cell_size="48"/>
+          </grid>
+        </rect>
+        <!-- Page 7: slots 649-756. One shared Backpack controller assigns global indices. -->
+        <rect name="flPage7" controller="TabSelectorTab" tab_key="7" tab_caption_key="7" width="864" height="288">
+          <grid name="flInventory7" depth="10" rows="6" cols="18" pos="0,0" cell_width="48" cell_height="48" repeat_content="true">
+            <item_stack name="0" cell_size="48"/>
+          </grid>
+        </rect>
+        <!-- Page 8: slots 757-864. One shared Backpack controller assigns global indices. -->
+        <rect name="flPage8" controller="TabSelectorTab" tab_key="8" tab_caption_key="8" width="864" height="288">
+          <grid name="flInventory8" depth="10" rows="6" cols="18" pos="0,0" cell_width="48" cell_height="48" repeat_content="true">
+            <item_stack name="0" cell_size="48"/>
+          </grid>
+        </rect>
+        <!-- Page 9: slots 865-960. One shared Backpack controller assigns global indices. -->
+        <rect name="flPage9" controller="TabSelectorTab" tab_key="9" tab_caption_key="9" width="864" height="288">
+          <grid name="flInventory9" depth="10" rows="5" cols="18" pos="0,0" cell_width="48" cell_height="48" repeat_content="true">
+            <item_stack name="0" cell_size="48"/>
+          </grid>
+          <grid name="flInventory9LastRow" depth="10" rows="1" cols="6" pos="0,-240" cell_width="48" cell_height="48" repeat_content="true">
+            <item_stack name="0" cell_size="48"/>
+          </grid>
+        </rect>
+      </rect>
+    </rect>
+  </append>
+
+  <!-- BagContainer resizes rows/columns at open, but item controllers are allocated at UI load. -->
+  <!-- Allocate 984 upfront so the final death-bag slots can be displayed and recovered. -->
+  <set xpath="/windows/window[@name='windowBagStorage']/rect[@name='content']/scrollview/grid[@name='queue']/@rows">123</set>
+  <set xpath="/windows/window[@name='windowBagStorage']/rect[@name='content']/scrollview/grid[@name='queue']/@cols">8</set>
+</configs>

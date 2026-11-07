@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configs>
+  <!-- Equipping/removing any vanilla backpack must leave all 960 slots available. -->
+  <set xpath="/items/item[@name='backpackSmall' or @name='backpackMedium' or @name='backpackLarge']/effect_group/passive_effect[@name='BagSize'][@operation='base_add']/@value">0</set>
+  <set xpath="/items/item[@name='backpackSmall' or @name='backpackMedium' or @name='backpackLarge']/effect_group/display_value[@name='dSlotCount']/@value">0</set>
+  <set xpath="/items/item[@name='drugSteroids']/effect_group/display_value[@name='dCarryCapacity']/@value">960</set>
+</configs>

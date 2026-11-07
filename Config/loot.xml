@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configs>
+  <!-- 960 inventory slots + 24 reserved for vanilla toolbelt/equipment drops. -->
+  <set xpath="/lootcontainers/lootcontainer[@name='playerBackpack']/@size">8,123</set>
+</configs>
